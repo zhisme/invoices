@@ -17,8 +17,10 @@ curl -X POST -H 'Content-Type: application/json' -H 'Authorization: Bearer f8481
 
 ## Installation
 
+```
 bundle install
 bundle exec rake db:create db:migrate db:seed
+```
 
 ## Running
 
