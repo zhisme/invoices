@@ -1,6 +1,11 @@
 FactoryBot.define do
   factory :company do
-    title { "MyString" }
-    user_id { 1 }
+    sequence(:title) { |n| "My Company #{n}" }
+    settings { {} }
+    user
+
+    trait :standalone do
+      settings { {billing_process: :per_company} }
+    end
   end
 end

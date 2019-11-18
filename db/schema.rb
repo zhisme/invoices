@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_121743) do
 
   create_table "companies", force: :cascade do |t|
     t.string "title", null: false
+    t.json "settings", default: {}
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_121743) do
     t.string "billable_type"
     t.integer "billable_id"
     t.float "total"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["billable_type", "billable_id"], name: "index_invoices_on_billable_type_and_billable_id"
@@ -42,7 +44,6 @@ ActiveRecord::Schema.define(version: 2019_11_17_121743) do
   create_table "users", force: :cascade do |t|
     t.string "login", null: false
     t.string "auth_token"
-    t.json "settings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["auth_token"], name: "index_users_on_auth_token"

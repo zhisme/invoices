@@ -5,6 +5,7 @@ class CreateInvoices < ActiveRecord::Migration[5.2]
       t.datetime :due_date, null: false
       t.references(:billable, polymorphic: true)
       t.float :total
+      t.integer :status, default: 0
 
       t.timestamps
     end

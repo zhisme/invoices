@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :location do
-    title { "MyString" }
-    company_id { 1 }
+    title { 'MyString' }
+    company
   end
 end

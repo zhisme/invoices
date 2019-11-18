@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :invoice do
-    title { "MyString" }
+    title { 'MyString' }
     billable_id { 1 }
-    billable_type { "MyString" }
+    billable_type { 'User' }
     total { 1.5 }
+    due_date { 1.day.from_now }
   end
 end
